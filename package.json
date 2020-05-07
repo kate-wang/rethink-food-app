@@ -42,7 +42,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint-config-react-app": "^3.0.5",
-    "webpack-dev-server": "^3.7.2"
+    "eslint-config-react-app": "^3.0.5"
   }
 }
