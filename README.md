@@ -1,5 +1,5 @@
 # Rethink Food Meal Tracking App
-This is the base code for the Rethink Food Meal Tracking app. The base of the app is in React (using Material-UI) and connects with Firebase, and instructions for deployment of the starter app are specified below, should it need to be restarted (otherwise, just clone the repo and we are ready to go!).
+This is the base code for the Rethink Food Meal Tracking app. The base of the app is in React (using Material-UI) and connects with Firebase.
 
 
 ## React Firebase Material Starter
@@ -17,36 +17,21 @@ A full-stack web application starter template that extends [Create React App](ht
 - ESLint configuration
 
 ---
+## Deployment Instructions
 
-#### Configure `.firebaserc`
+### Clone repo locally.
 
-The `.firebaserc` file is used to tell the Firebase CLI which Firebase projects your app is associated with. It allows for the definition of aliases to make it very easy to switch between dev and prod environments.
-
-Set the default environment to be the development project and create aliases for both dev and prod like this:
-
-`.firebaserc`
-
-```json
-{
-  "projects": {
-    "default": "FIREBASE-PROJECT-ID-DEV",
-    "dev": "FIREBASE-PROJECT-ID-DEV",
-    "prod": "FIREBASE-PROJECT-ID-PROD"
-  }
-}
-```
-
-Replace `FIREBASE-PROJECT-ID-DEV` with your dev project ID such as `my-app-dev` and `FIREBASE-PROJECT-ID-PROD` with your prod project ID such as `my-app-prod`.
+Go to the project directory and run `npm install ` to get the node modules set up.
 
 #### Configure Environment Variables
 
-Your Firebase environment is defined by environment variables that are used to configure the Firebase instance in the app.
+Our Firebase environment is defined by environment variables that are used to configure the Firebase instance in the app.
 
-There are 2 environment variable configuration files included in the project: `.env.development` and `.env.production`
+There are 2 environment variable configuration files you need to create in rethink-food-app-master directory: `.env.development` and `.env.production`
 
-These files are gitignored and you should NOT commit these to version control. They were just included in this repo for your convenience.
+These files are gitignored and you should NOT commit these to version control, which is why you need to manually add them now.
 
-Populate these two files with your configuration values for the Dev and Prod Firebase projects, respectively. You can find these values in the Firebase Console project settings. Under the General tab, click *Add Firebase to your web app* and you'll see a snippet that looks like this:
+Populate these two files with your configuration values for the Dev and Prod Firebase projects, respectively. You can find these values in the Firebase Console project settings. Scroll down to see the settings for Rethink Food App and you'll see something that looks like this:
 
 ```html
 <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
@@ -94,7 +79,10 @@ REACT_APP_MESSAGING_SENDER_ID=12345678900
 
 **NOTE: Remember, these configuration files are gitignored for a reason. Do NOT commit them!**
 
-### Deploy app to Firebase Hosting
+You should be all set up now and ready to run `npm start` or `yarn start` to launch the app locally and view it on localhost:3000!
+
+## Deploy app to Firebase Hosting
+(We don't need this yet for local development, but will probably want to use it eventually!)
 
 Before continuing, ensure that you have the Firebase CLI node module installed globally:
 
@@ -197,20 +185,6 @@ yarn shipit:prod
 ```
 
 You will similar very similar output to your dev deployment and you can once again click on the `Hosting URL` to see the deployed app.
-
----
-
-## Start Developing!
-
-You are now fully configured to build a full-stack web application using an incredibly powerful stack of tools, with a dev/prod split included.
-
-Start up the dev server and start developing with hot reload and linting ready to go!:
-
-```bash
-yarn start
-```
-
-Ready? Go!
 
 ---
 
