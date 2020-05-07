@@ -18,53 +18,6 @@ A full-stack web application starter template that extends [Create React App](ht
 
 ---
 
-## Getting Started
-
-The intended usage of this repo is to clone it as a starting point for a new project.
-
-Here are the recommended getting started steps:
-
-1. Clone the repo
-2. Delete the `/.git` folder
-3. (optional) Initialize git for the new project and create your initial commit
-4. Install node_modules using `yarn`
-5. Run the app
-6. Configure Firebase deployments for dev/prod
-7. Deploy app to Firebase Hosting
-
-Here are those steps written out in a single flow:
-
-```bash
-git clone git@github.com:tylerjryan/react-firebase-material-starter.git <project-name>
-cd <project-name>
-rm -rf .git
-git init
-git add .
-git commit -m "Initial commit from React Firebase Material Starter"
-yarn
-yarn start
-```
-
-Running `yarn start` will start a development server and open the app at [http://localhost:3000](http://localhost:3000).
-
-You can play with the app and see that it is fully functional and include a nice starter design that is mobile responsive, utilizes several of Material-UI's components, and contains some example routes using React Router.
-
-When you are done, close the dev server using `ctrl+c`.
-
-### Configure Firebase deployments for dev/prod
-
-To deploy our app, we need to connect our project to Firebase. We will setup **seperate** projects in Firebase for Development and Production. This will ensure that the environements are completely isolated from each other. But because Firebase allows for full configuration using local files, we can ensure that the deployments are equivalent very easily.
-
-Note that this repo only contains Hosting configuration. You will need to do your own setup to enable other Firebase services such as Firestore and Storage.
-
-#### Create Development and Production Firebase Projects
-
-Go to the [Firebase Console](https://console.firebase.google.com) and create two projects: one for development and one for production. I recommend a naming convention like this: `My App - DEV` and `My App - PROD`.
-
-This will result in the create of two projects with the IDs: `my-app-dev` and `my-app-prod`
-
-We will need these IDs for our local `.firebaserc` configuration.
-
 #### Configure `.firebaserc`
 
 The `.firebaserc` file is used to tell the Firebase CLI which Firebase projects your app is associated with. It allows for the definition of aliases to make it very easy to switch between dev and prod environments.
