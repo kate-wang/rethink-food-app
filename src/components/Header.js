@@ -20,7 +20,7 @@ const Header = ({ classes }) => (
         variant='h5'
         color='inherit'
       >
-        My App
+        Rethink Food Website Starter page!
       </Typography>
       <Fab
         color='secondary'

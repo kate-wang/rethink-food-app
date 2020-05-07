@@ -1,7 +1,7 @@
 {
   "projects": {
-    "default": "FIREBASE-PROJECT-ID-DEV",
-    "dev": "FIREBASE-PROJECT-ID-DEV",
-    "prod": "FIREBASE-PROJECT-ID-PROD"
+    "default": "rethink-food-app-dev",
+    "dev": "rethink-food-app-dev",
+    "prod": "rethink-food-app-prod"
   }
 }
