@@ -1,0 +1,48 @@
+{
+  "name": "react-firebase-material-starter",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^3.6.2",
+    "@material-ui/icons": "^3.0.1",
+    "classnames": "^2.2.6",
+    "firebase": "^5.6.0",
+    "handlebars": "^4.1.0",
+    "js-yaml": "^3.13.1",
+    "jss": "^9.8.7",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-firebaseui": "^3.1.2",
+    "react-jss": "^8.6.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "recompose": "^0.30.0"
+  },
+  "scripts": {
+    "start": "react-scripts start;",
+    "build": "react-scripts build",
+    "build:env": "sh -ac '. .env.${REACT_APP_ENV}; react-scripts build'",
+    "build:dev": "REACT_APP_ENV=development yarn build:env",
+    "build:prod": "REACT_APP_ENV=production yarn build:env",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "shipit": "yarn build; yarn deploy",
+    "shipit:dev": "yarn build:dev; yarn deploy",
+    "shipit:prod": "yarn build:prod; yarn deploy",
+    "deploy": "firebase deploy"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "eslint-config-react-app": "^3.0.5",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
