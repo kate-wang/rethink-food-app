@@ -1,5 +1,5 @@
 # Rethink Food Meal Tracking App
-This is the base code for the Rethink Food Meal Tracking app. The base of the app is in React (using Material-UI) and Firebase, and instructions for deployment of the starter app are specified below, should it need to be restarted (otherwise, just clone the repo and we are ready to go!).
+This is the base code for the Rethink Food Meal Tracking app. The base of the app is in React (using Material-UI) and connects with Firebase, and instructions for deployment of the starter app are specified below, should it need to be restarted (otherwise, just clone the repo and we are ready to go!).
 
 
 ## React Firebase Material Starter
