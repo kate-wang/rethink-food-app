@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
@@ -12,6 +12,7 @@ import LockIcon from '@material-ui/icons/LockOutlined'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import withStyles from '@material-ui/core/styles/withStyles'
+import Header from './Header'
 
 import FirebaseSignIn from './FirebaseSignIn'
 
@@ -51,6 +52,8 @@ const SignIn = props => {
   const { classes } = props
 
   return (
+    <Fragment>
+    <Header />
     <main className={classes.main}>
       <CssBaseline />
       <Paper className={classes.paper}>
@@ -82,10 +85,10 @@ const SignIn = props => {
           >
             Sign in
           </Button>
-          <FirebaseSignIn />
         </form>
       </Paper>
     </main>
+    </Fragment>
   )
 }
 
