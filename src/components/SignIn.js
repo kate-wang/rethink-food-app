@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
@@ -44,16 +45,23 @@ const styles = theme => ({
     marginTop: theme.spacing.unit
   },
   submit: {
-    marginTop: theme.spacing.unit * 3
+    marginTop: theme.spacing.unit * 2
   }
 })
 
 const SignIn = props => {
   const { classes } = props
+  const CollisionLink = React.forwardRef((props, ref) => (
+    <Link innerRef={ref} to="/signup" {...props} />
+  ));
+
+  // Handle submit to sign in.
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
 
   return (
     <Fragment>
-    <Header />
     <main className={classes.main}>
       <CssBaseline />
       <Paper className={classes.paper}>
@@ -63,7 +71,7 @@ const SignIn = props => {
         <Typography component='h1' variant='h5'>
           Sign in
         </Typography>
-        <form className={classes.form}>
+        <form className={classes.form} onSubmit={e => handleSubmit(e)}>
           <FormControl margin='normal' required fullWidth>
             <InputLabel htmlFor='email'>Email Address</InputLabel>
             <Input id='email' name='email' autoComplete='email' autoFocus />
@@ -86,6 +94,12 @@ const SignIn = props => {
             Sign in
           </Button>
         </form>
+        <Button
+          type='submit'
+          fullWidth
+          variant='contained'
+          color='default'
+          className={classes.submit} component={CollisionLink}> New to Rethink Food? Create an Account!</Button>
       </Paper>
     </main>
     </Fragment>

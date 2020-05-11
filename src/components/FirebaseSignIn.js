@@ -37,7 +37,7 @@ class FirebaseSignInBase extends Component {
       ],
       callbacks: {
         signInSuccessWithAuthResult: () => {
-          this.props.history.push(ROUTES.HOME)
+          this.props.history.push(ROUTES.LANDING_PAGE)
           return false
         }
       }
