@@ -4,16 +4,32 @@ import Body from './Body'
 import Footer from './Footer'
 import SignIn from './SignIn'
 
-class LandingPage extends Component {
-  render () {
-    return (
+import Grid from '@material-ui/core/Grid'
+import withStyles from '@material-ui/core/styles/withStyles'
+
+import landingimg from './Images/landing.png'
+
+const styles = theme => ({
+  image: {
+    height: "100vh",
+    backgroundImage: "url(" + landingimg + ")",
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundPosition: 'left',
+  }
+})
+
+const LandingPage = props => {
+  const { classes } = props
+
+  return (
       <Fragment>
         <Header />
-        This is the landing page with sign-in on it!
-        <SignIn />
+        <Grid container className={classes.image}>
+          <SignIn />
+        </Grid>
       </Fragment>
-    )
-  }
+  )
 }
 
-export default LandingPage
+export default withStyles(styles)(LandingPage)
