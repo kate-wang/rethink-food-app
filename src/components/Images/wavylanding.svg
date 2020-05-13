@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1654px" height="937px" viewBox="0 0 1654 937" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="105.910287%" y1="56.3797712%" x2="-7.05443234%" y2="59.1055342%" id="linearGradient-1">
+            <stop stop-color="#FBF04C" offset="0%"></stop>
+            <stop stop-color="#56B881" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-13.7237654%" y1="0%" x2="100%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#65CE52" offset="0%"></stop>
+            <stop stop-color="#35A470" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="81.8797275%" y1="94.6271218%" x2="-8.35426948%" y2="-7.74354784%" id="linearGradient-3">
+            <stop stop-color="#4FC157" offset="0%"></stop>
+            <stop stop-color="#23947B" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-3">
+            <path d="M0,0 L1654,0 L1654,792.5 C872,954.5 827,601.5 0,884.745891 L0,0 Z" id="Rectangle" fill="url(#linearGradient-1)" opacity="0.7109375" transform="translate(827.000000, 442.372946) scale(-1, 1) translate(-827.000000, -442.372946) "></path>
+            <path d="M236.263313,912.973084 C240.050204,913.726875 243.38321,911.2205 243.626865,907.356503 C243.626865,907.356503 255.159401,801.337943 193.120086,682.837943 C131.080771,564.337943 15.0253982,531.685122 15.0253982,531.685122 C5.13656719,528.179672 -4.59197516,533.676469 -6.39695455,543.999744 C-6.39695455,543.999744 -38.863829,678.706875 27.6200858,783.837943 C94.1040005,888.969012 236.263313,912.973084 236.263313,912.973084 Z" id="Line" fill="url(#linearGradient-2)" transform="translate(115.729315, 719.837943) rotate(-7.000000) translate(-115.729315, -719.837943) "></path>
+            <path d="M1637.17125,869.289895 C1640.95814,870.043686 1644.29114,867.537311 1644.5348,863.673314 C1644.5348,863.673314 1656.06734,757.654754 1594.02802,639.154754 C1531.98871,520.654754 1415.93333,488.001933 1415.93333,488.001933 C1406.0445,484.496483 1396.31596,489.99328 1394.51098,500.316556 C1394.51098,500.316556 1362.04411,635.023686 1428.52802,740.154754 C1495.01194,845.285823 1637.17125,869.289895 1637.17125,869.289895 Z" id="Line" fill="url(#linearGradient-3)" transform="translate(1516.637250, 676.154754) rotate(-108.000000) translate(-1516.637250, -676.154754) "></path>
+        </g>
+    </g>
+</svg>
