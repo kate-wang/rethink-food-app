@@ -15,7 +15,8 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import withStyles from '@material-ui/core/styles/withStyles'
 import Header from './Header'
-import firebase from './Firebase/firebase'
+//import firebase from './Firebase/firebase'
+import AuthManager from './Firebase/AuthManager'
 
 const styles = theme => ({
   main: {
@@ -64,7 +65,20 @@ const SignUp = props => {
   // Handle submit to create new account.
   function handleSubmit(e) {
     e.preventDefault();
+    if (checkEmail() == false) {
+      alert("Invalid Email Address");
+    }
 
+    let auth = new AuthManager();
+    auth.createUserWithEmailAndPassword(emailAddress, emailAddress, password);
+    auth.createRestaurant(restaurantName, emailAddress, phoneNumber, addressStreet, addressCity, addressState, addressZipcode);
+  }
+
+  function checkEmail() {
+    if (emailAddress.includes("@") && emailAddress.includes(".")) {
+      return true;
+    }
+    return false
   }
 
   return (

@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/database'
 import 'firebase/firestore';
 
 const config = {
@@ -11,9 +12,9 @@ const config = {
     messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 };
 
-class Firebase {
+class AuthManager {
     constructor() {
-        firebase.initializeApp(config);
+        //firebase.initializeApp(config);
 
         this.auth = firebase.auth();
         this.emailProvider = firebase.auth.EmailAuthProvider;
@@ -24,6 +25,26 @@ class Firebase {
     }
 
     // *** Auth API ***
+
+    createRestaurant = (name, email, phone, address, city, state, zip) => {
+      var database = firebase.database();
+      var ref = database.ref('/Restaurants').push();
+      let userId = this.auth.currentUser.uid;
+      let key = ref.key;
+      ref.set({
+        name: name,
+        email: email,
+        phone: phone,
+        address: address,
+        city: city,
+        state: state,
+        zip: zip,
+        id: ref.key
+      })
+
+      ref = database.ref('/Users')
+      ref.child(userId).set(key);
+    }
 
     createUserWithEmailAndPassword = (username, email, password) => {
         return this.auth.createUserWithEmailAndPassword(email, password)
@@ -78,4 +99,4 @@ class Firebase {
     users = () => this.firestore.collection('users');
 }
 
-export default Firebase;
+export default AuthManager;
