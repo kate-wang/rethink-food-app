@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Fab from '@material-ui/core/Fab'
 import Typography from '@material-ui/core/Typography'
+import { Link } from 'react-router-dom'
 import ArrowDownwardRoundedIcon from '@material-ui/icons/ArrowDownwardRounded'
 
 import withStyles from '@material-ui/core/styles/withStyles'
@@ -27,7 +28,7 @@ const styles = theme => ({
     padding: `${theme.spacing.unit * 8}px ${theme.spacing.unit * 9}px`,
   },
   about: {
-    padding: `${theme.spacing.unit * 3}px ${theme.spacing.unit * 9}px`,
+    padding: `${theme.spacing.unit * 3}px ${theme.spacing.unit * 9}px ${theme.spacing.unit * 4}px`,
   },
 })
 
@@ -49,8 +50,8 @@ const LandingPage = props => {
               variant='h6'
               color='secondary'
             >
-              Stimulating the restaurant economy while providing meals for those in need.
-              Learn more by scrolling down below!
+              Reinvigorating the restaurant economy while providing meals for those in need.
+              Learn more below!
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -69,10 +70,19 @@ const LandingPage = props => {
               variant='h6'
               color='secondary'
             >
-            Lorem ipsum dolor sit amet, ius denique indoctum disputando ei. Cu labitur dignissim sed. Senserit consetetur te qui. In mutat nostrud salutatus quo. Pro ne hendrerit maiestatis reprehendunt, wisi accusam luptatum cu mel, his et aperiam quaeque praesent.
+            Rethink Food NYC Inc is a non-profit organization that utilizes
+            food excess from restaurants, grocery stores, and corporate
+            kitchens to create new and nutritious meals for those in need.
+
+            In response to the unprecedented demand for food and simultaneous
+            restaurant closings due to the Covid-19 outbreak, Rethink launched
+            the "Restaurant Response Program" as an emergency food response.
+            This program provides select restaurants with grants to reopen
+            their doors and create meals for people in need.
+
+            Visit rethinkfood.nyc for more info.
             </Typography>
           </Typography>
-
         </Grid>
 
       </Fragment>
