@@ -30,11 +30,11 @@ const styles = theme => ({
     }
   },
   paper: {
-    marginTop: theme.spacing.unit * 8,
+    marginTop: theme.spacing.unit * 4,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`
+    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
   },
   avatar: {
     margin: theme.spacing.unit,
@@ -45,7 +45,7 @@ const styles = theme => ({
     marginTop: theme.spacing.unit
   },
   submit: {
-    marginTop: theme.spacing.unit * 2
+    marginTop: theme.spacing.unit * 1
   }
 })
 
@@ -99,7 +99,7 @@ const SignIn = props => {
           fullWidth
           variant='contained'
           color='default'
-          className={classes.submit} component={CollisionLink}> New to Rethink Food? Create an Account!</Button>
+          className={classes.submit} component={CollisionLink}>Register</Button>
       </Paper>
     </main>
     </Fragment>

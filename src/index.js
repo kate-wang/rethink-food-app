@@ -9,12 +9,14 @@ import App from './components/App'
 
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core'
-import { blue, pink } from '@material-ui/core/colors'
+import { green, cyan } from '@material-ui/core/colors'
 
 const theme = createMuiTheme({
   palette: {
-    primary: blue,
-    secondary: pink,
+    primary: green,
+    secondary: {
+      main: '#02582d'
+    },
     type: 'light'
   },
   spacing: {
