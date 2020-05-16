@@ -8,6 +8,8 @@ import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Fab from '@material-ui/core/Fab'
 import Typography from '@material-ui/core/Typography'
+import { typography } from '@material-ui/system';
+
 import { Link } from 'react-router-dom'
 import ArrowDownwardRoundedIcon from '@material-ui/icons/ArrowDownwardRounded'
 
@@ -25,10 +27,13 @@ const styles = theme => ({
     resizeMode:'contain'
   },
   hero: {
-    padding: `${theme.spacing.unit * 8}px ${theme.spacing.unit * 9}px`,
+    padding: `${theme.spacing.unit * 10}px ${theme.spacing.unit * 12}px`,
   },
   about: {
     padding: `${theme.spacing.unit * 3}px ${theme.spacing.unit * 9}px ${theme.spacing.unit * 4}px`,
+  },
+  h3: {
+    fontWeight: '900',
   },
 })
 
@@ -38,24 +43,29 @@ const LandingPage = props => {
   return (
       <Fragment>
         <Header />
-        <Grid container className={classes.bg} spacing={3}>
-          <Grid item xs={12} sm={6} className={classes.hero}>
+        <Grid container className={classes.bg}>
+          <Grid item xs={7} className={classes.hero}>
             <Typography
               variant='h3'
               color='primary'
+              gutterBottom
+              className={classes.h3}
             >
-              Rethink Food Restaurant Response Program
+              Rethink Restaurant Response Program
             </Typography>
             <Typography
-              variant='h6'
-              color='secondary'
+              color="secondary"
+              variant="body1"
+              gutterBottom
             >
               Reinvigorating the restaurant economy while providing meals for those in need.
               Learn more below!
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={3}>
             <SignIn />
+          </Grid>
+          <Grid item xs={3}>
           </Grid>
 
         </Grid>
@@ -67,7 +77,7 @@ const LandingPage = props => {
           >
             About the Program
             <Typography
-              variant='h6'
+              variant='body1'
               color='secondary'
             >
             Rethink Food NYC Inc is a non-profit organization that utilizes
