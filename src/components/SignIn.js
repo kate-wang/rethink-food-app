@@ -15,7 +15,8 @@ import Typography from '@material-ui/core/Typography'
 import withStyles from '@material-ui/core/styles/withStyles'
 import Header from './Header'
 
-import FirebaseSignIn from './FirebaseSignIn'
+//import FirebaseSignIn from './FirebaseSignIn'
+import AuthManager from './Firebase/AuthManager'
 
 const styles = theme => ({
   main: {
@@ -51,6 +52,8 @@ const styles = theme => ({
 
 const SignIn = props => {
   const { classes } = props
+  const [emailAddress, setEmailAddress] = React.useState("");
+  const [password, setPassword] = React.useState("");
   const CollisionLink = React.forwardRef((props, ref) => (
     <Link innerRef={ref} to="/signup" {...props} />
   ));
@@ -58,6 +61,8 @@ const SignIn = props => {
   // Handle submit to sign in.
   function handleSubmit(e) {
     e.preventDefault();
+    let auth = new AuthManager();
+    auth.signInWithEmailAndPassword(emailAddress, password);
   }
 
   return (
@@ -74,11 +79,11 @@ const SignIn = props => {
         <form className={classes.form} onSubmit={e => handleSubmit(e)}>
           <FormControl margin='normal' required fullWidth>
             <InputLabel htmlFor='email'>Email Address</InputLabel>
-            <Input id='email' name='email' autoComplete='email' autoFocus />
+            <Input id='email' name='email' autoComplete='email' value={emailAddress} onChange={event => setEmailAddress(event.target.value)}/>
           </FormControl>
           <FormControl margin='normal' required fullWidth>
             <InputLabel htmlFor='password'>Password</InputLabel>
-            <Input name='password' type='password' id='password' autoComplete='current-password' />
+            <Input name='password' type='password' id='password' autoComplete='current-password' value={password} onChange={event => setPassword(event.target.value)}/>
           </FormControl>
           <FormControlLabel
             control={<Checkbox value='remember' color='primary' />}
