@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
@@ -53,6 +54,7 @@ const styles = theme => ({
 
 const SignUp = props => {
   const { classes } = props
+  const history = useHistory();
   const [restaurantName, setRestaurantName] = React.useState("");
   const [emailAddress, setEmailAddress] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -70,8 +72,12 @@ const SignUp = props => {
     }
 
     let auth = new AuthManager();
-    auth.createUserWithEmailAndPassword(emailAddress, emailAddress, password);
-    auth.createRestaurant(restaurantName, emailAddress, phoneNumber, addressStreet, addressCity, addressState, addressZipcode);
+    auth.createUserWithEmailAndPassword(emailAddress, emailAddress, password).then(() => {
+      auth.createRestaurant(restaurantName, emailAddress, phoneNumber, addressStreet, addressCity, addressState, addressZipcode).then(() => {
+        console.log("sign in success");
+        history.push('/restaurant-home');
+      });
+    });
   }
 
   function checkEmail() {

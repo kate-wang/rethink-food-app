@@ -97,6 +97,11 @@ class AuthManager {
     user = uid => this.firestore.collection('users').doc(uid)
 
     users = () => this.firestore.collection('users');
+
+    getAuth = () => {
+      return this.auth;
+    }
+
 }
 
 export default AuthManager;

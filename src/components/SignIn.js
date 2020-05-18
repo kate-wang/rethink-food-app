@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
@@ -14,9 +14,9 @@ import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import withStyles from '@material-ui/core/styles/withStyles'
 import Header from './Header'
-
-//import FirebaseSignIn from './FirebaseSignIn'
 import AuthManager from './Firebase/AuthManager'
+
+import FirebaseSignIn from './FirebaseSignIn'
 
 const styles = theme => ({
   main: {
@@ -52,6 +52,7 @@ const styles = theme => ({
 
 const SignIn = props => {
   const { classes } = props
+  const history = useHistory();
   const [emailAddress, setEmailAddress] = React.useState("");
   const [password, setPassword] = React.useState("");
   const CollisionLink = React.forwardRef((props, ref) => (
@@ -62,7 +63,15 @@ const SignIn = props => {
   function handleSubmit(e) {
     e.preventDefault();
     let auth = new AuthManager();
-    auth.signInWithEmailAndPassword(emailAddress, password);
+    auth.signInWithEmailAndPassword(emailAddress,password).then(((user) => {
+      console.log("sign in success");
+      history.push('/restaurant-home');
+    })).catch(function(error) {
+       // Handle Errors here.
+       var errorCode = error.code;
+       var errorMessage = error.message;
+       alert(errorMessage);
+     });
   }
 
   return (
@@ -79,7 +88,7 @@ const SignIn = props => {
         <form className={classes.form} onSubmit={e => handleSubmit(e)}>
           <FormControl margin='normal' required fullWidth>
             <InputLabel htmlFor='email'>Email Address</InputLabel>
-            <Input id='email' name='email' autoComplete='email' value={emailAddress} onChange={event => setEmailAddress(event.target.value)}/>
+            <Input id='email' name='email' autoComplete='email' autoFocus value={emailAddress} onChange={event => setEmailAddress(event.target.value)} />
           </FormControl>
           <FormControl margin='normal' required fullWidth>
             <InputLabel htmlFor='password'>Password</InputLabel>
